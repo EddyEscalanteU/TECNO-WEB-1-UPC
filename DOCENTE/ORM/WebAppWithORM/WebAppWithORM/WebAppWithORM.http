@@ -1,0 +1,6 @@
+@WebAppWithORM_HostAddress = http://localhost:5053
+
+GET {{WebAppWithORM_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

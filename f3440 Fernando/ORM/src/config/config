@@ -1,0 +1,14 @@
+const env = require("dotenv").config();
+
+const config = {
+  ENV: process.env.ENV || "dev",
+  HOST_DB: process.env.HOST_DB || "127.0.0.1",
+  PORT_DB: process.env.PORT_DB || "3306",
+  NAME_DB: process.env.NAME_DB || "company",
+  USER_DB: process.env.USER_DB || "admin",
+  PASS_DB: process.env.PASS_DB || "ABCabc123.",
+
+
+};
+
+module.exports = config;
