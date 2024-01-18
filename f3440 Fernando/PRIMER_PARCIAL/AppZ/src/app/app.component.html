@@ -22,31 +22,23 @@
 <span onclick="openNav()">open</span>
 
 <div class="mainForm">
-<!-- <input  [(ngModel)]="filter"  id="myInput" (ngModelChange)="changefilter()" placeholder="Search for names.." > -->
-<input [(ngModel)]="filter" (input)="changefilter($event)">
+<input [(ngModel)]="filter" id="myInput" (input)="changefilter($event)" placeholder="Buscar por nombres..">
 <table id="myTable">
+  <thead>
   <tr class="header">
     <th style="width:60%;">Name</th>
     <th style="width:40%;">Country</th>
   </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Germany</td>
+</thead>
+<tbody>
+  <tr *ngFor="let elemento of data" >
+    <td>{{elemento.name}}</td>
+    <td>{{elemento.country}}</td>
   </tr>
-  <tr>
-    <td>Berglunds snabbkop</td>
-    <td>Sweden</td>
-  </tr>
-  <tr>
-    <td>Island Trading</td>
-    <td>UK</td>
-  </tr>
-  <tr>
-    <td>Koniglich Essen</td>
-    <td>Germany</td>
-  </tr>
+</tbody>
 </table>
 </div>
+
 </main>
 
 

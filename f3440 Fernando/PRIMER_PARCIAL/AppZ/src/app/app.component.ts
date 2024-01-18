@@ -12,18 +12,34 @@ import { FormsModule } from '@angular/forms';
 })
 export class AppComponent implements OnInit {
   ngOnInit(): void {
-    console.log('hola');
-    
+    this.setData();  
   }
+  
   title = 'AppZ';
-  data= [{name:"Alfreds Futter",
-          country:"Germany"},
-          {name:"Pepe Perez",
-          country:"Bolivia"}];
+  data:any= [];
   filter="";
 
   changefilter(e:any){
-    console.log(e);
-
+    
+    if(e.target.value==="")
+    {
+      this.setData();
+    }else{
+    const dataNew= this.data.filter((p:any)=>p.name.includes(e.target.value))
+    console.log(dataNew);
+    this.data=dataNew
+    }
+  }
+  setData(){
+    this.data=[{name:"Alfreds Futter",
+    country:"Germany"},
+    {name:"Bergnlunds snabbkop",
+      country:"UK"
+    },
+    {
+      name:"Island Trading",
+      country:"Germany"
+    }
+  ];
   }
 }
