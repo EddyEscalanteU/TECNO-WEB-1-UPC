@@ -1,4 +1,4 @@
-import { Component, ngOnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -10,7 +10,11 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './app.component.css',
 
 })
-export class AppComponent implements ngOnInit {
+export class AppComponent implements OnInit {
+  ngOnInit(): void {
+    console.log('hola');
+    
+  }
   title = 'AppZ';
   data= [{name:"Alfreds Futter",
           country:"Germany"},
