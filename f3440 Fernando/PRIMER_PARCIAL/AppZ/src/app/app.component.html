@@ -1,0 +1,55 @@
+
+
+
+<main class="main">
+  <!-- The overlay -->
+<div id="myNav" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <!-- Overlay content -->
+  <div class="overlay-content">
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+
+</div>
+
+<!-- Use any element to open/show the overlay navigation menu -->
+<span onclick="openNav()">open</span>
+
+<div class="mainForm">
+<!-- <input  [(ngModel)]="filter"  id="myInput" (ngModelChange)="changefilter()" placeholder="Search for names.." > -->
+<input [(ngModel)]="filter" (input)="changefilter($event)">
+<table id="myTable">
+  <tr class="header">
+    <th style="width:60%;">Name</th>
+    <th style="width:40%;">Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Berglunds snabbkop</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Koniglich Essen</td>
+    <td>Germany</td>
+  </tr>
+</table>
+</div>
+</main>
+
+
+
+
+<router-outlet></router-outlet>
