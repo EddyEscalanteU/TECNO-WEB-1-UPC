@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
   selector: 'angular-monorepo-nx-welcome',
   standalone: true,
   imports: [CommonModule],
-  template: `
+  template:`
     <!--
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *
      This is a starter component and can be deleted.
@@ -881,7 +881,7 @@ nx affected:e2e</pre>
         </p>
       </div>
     </div>
-  `,
+    `,
   styles: [],
   encapsulation: ViewEncapsulation.None,
 })

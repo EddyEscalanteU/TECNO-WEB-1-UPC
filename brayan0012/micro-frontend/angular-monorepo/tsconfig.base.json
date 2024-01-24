@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@angular-monorepo/filter-table": ["libs/filter-table/src/index.ts"],
       "@angular-monorepo/mega-menu": ["libs/mega-menu/src/index.ts"]
     }
   },
