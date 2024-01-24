@@ -1,0 +1,32 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@angular-monorepo/filter-table": ["libs/filter-table/src/index.ts"],
+      "@angular-monorepo/filter-table/filter-table": [
+        "libs/filter-table/filter-table/src/index.ts"
+      ],
+      "@angular-monorepo/filter-table/mega-menu": [
+        "libs/filter-table/mega-menu/src/index.ts"
+      ],
+      "@angular-monorepo/mega-menu": ["libs/mega-menu/src/index.ts"],
+      "@angular-monorepo/mega-menu/mega-menu": [
+        "libs/mega-menu/mega-menu/src/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
