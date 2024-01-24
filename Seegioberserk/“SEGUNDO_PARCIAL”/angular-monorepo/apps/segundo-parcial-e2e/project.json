@@ -1,0 +1,30 @@
+{
+  "name": "segundo-parcial-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/segundo-parcial-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/segundo-parcial-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "segundo-parcial:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "segundo-parcial:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "segundo-parcial:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["segundo-parcial"]
+}
