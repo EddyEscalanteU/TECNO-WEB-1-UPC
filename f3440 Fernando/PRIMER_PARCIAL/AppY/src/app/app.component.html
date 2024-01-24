@@ -1,0 +1,43 @@
+
+
+
+<main class="main">
+<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a href="#home" class="active">Logo</a>
+  <!-- Navigation links (hidden by default) -->
+  <div id="myLinks">
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+  </div>
+  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div> 
+<div class="mainForm">
+<input [(ngModel)]="filter" id="myInput" (input)="changefilter($event)" placeholder="Buscar por nombres..">
+<table id="myTable">
+  <thead>
+  <tr class="header">
+    <th style="width:60%;">Name</th>
+    <th style="width:40%;">Country</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let elemento of data" >
+    <td>{{elemento.name}}</td>
+    <td>{{elemento.country}}</td>
+  </tr>
+</tbody>
+</table>
+</div>
+</main>
+
+
+
+<router-outlet></router-outlet>
