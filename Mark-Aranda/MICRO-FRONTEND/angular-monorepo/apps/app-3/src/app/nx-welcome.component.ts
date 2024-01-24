@@ -1,10 +1,11 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FilterTableComponent } from '@angular-monorepo/filter-table';
 
 @Component({
   selector: 'angular-monorepo-nx-welcome',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FilterTableComponent],
   template: `
     <!--
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -435,6 +436,7 @@ import { CommonModule } from '@angular/common';
             Welcome app-3 👋
           </h1>
         </div>
+        <angular-monorepo-filter-table></angular-monorepo-filter-table>
         <!--  HERO  -->
         <div id="hero" class="rounded">
           <div class="text-container">

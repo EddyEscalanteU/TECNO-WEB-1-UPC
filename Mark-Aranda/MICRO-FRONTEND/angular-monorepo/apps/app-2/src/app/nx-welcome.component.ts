@@ -1,11 +1,11 @@
 import { Component, ViewEncapsulation, ɵflushModuleScopingQueueAsMuchAsPossible } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MegaMenuComponent } from '@angular-monorepo/mega-menu';
-
+import { FilterTableComponent } from '@angular-monorepo/filter-table';
 @Component({
   selector: 'angular-monorepo-nx-welcome',
   standalone: true,
-  imports: [CommonModule, MegaMenuComponent],
+  imports: [CommonModule, MegaMenuComponent, FilterTableComponent],
   template: `
     <!--
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -437,6 +437,7 @@ import { MegaMenuComponent } from '@angular-monorepo/mega-menu';
           </h1>
         </div>
         <angular-monorepo-mega-menu></angular-monorepo-mega-menu>
+        <angular-monorepo-filter-table></angular-monorepo-filter-table>
         <!--  HERO  -->
         <div id="hero" class="rounded">
           <div class="text-container">
