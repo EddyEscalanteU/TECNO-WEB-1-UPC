@@ -1,10 +1,11 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import {MegaMenuComponent} from'@angular-monorepo/mega-menu';
+import {FilterTableComponent} from'@angular-monorepo/filter-table';
 @Component({
   selector: 'angular-monorepo-nx-welcome',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,MegaMenuComponent,FilterTableComponent],
   template:`
     <!--
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -426,13 +427,16 @@ import { CommonModule } from '@angular/common';
         }
       }
     </style>
+
     <div class="wrapper">
       <div class="container">
-        <!--  WELCOME  -->
+      <!--  WELCOME  -->
+      <angular-monorepo-mega-menu></angular-monorepo-mega-menu>
+      <angular-monorepo-filter-table></angular-monorepo-filter-table>  
         <div id="welcome">
           <h1>
             <span> Hello there, </span>
-            Welcome app-1 👋
+            Welcome app-1 👋   
           </h1>
         </div>
         <!--  HERO  -->
@@ -882,6 +886,8 @@ nx affected:e2e</pre>
       </div>
     </div>
     `,
+
+    
   styles: [],
   encapsulation: ViewEncapsulation.None,
 })
