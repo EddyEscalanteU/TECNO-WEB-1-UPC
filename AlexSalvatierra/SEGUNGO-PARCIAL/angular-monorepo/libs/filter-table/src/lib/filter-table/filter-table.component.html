@@ -1,0 +1,12 @@
+<input type="text" id="myInput" [(ngModel)]="searchInput" (input)="filterTable()" placeholder="Search..">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:60%;">Name</th>
+    <th style="width:40%;">Country</th>
+  </tr>
+  <tr *ngFor="let row of filteredRows">
+    <td>{{ row.name }}</td>
+    <td>{{ row.country }}</td>
+  </tr>
+</table>
