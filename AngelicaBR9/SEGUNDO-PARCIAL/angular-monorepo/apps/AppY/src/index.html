@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>AppY</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+  <body>
+    <angular-monorepo-root></angular-monorepo-root>
+    <script>
+      function myFunction() {
+        var input, filter, table, tr, td, i, txtValueName, txtValueCountry;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+    
+        for (i = 0; i < tr.length; i++) {
+    
+          tdNombre = tr[i].getElementsByTagName("td")[0];
+          tdEdad = tr[i].getElementsByTagName("td")[1];
+          if (tdNombre && tdEdad) {
+            txtValueNombre = tdNombre.textContent || tdNombre.innerText;
+            txtValueEdad = tdEdad.textContent || tdEdad.innerText;
+    
+            if (txtValueNombre.toUpperCase().indexOf(filter) > -1 ||
+              txtValueEdad.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }       
+        }
+      } 
+      </script>
+
+  </body>
+</html>
+ 
