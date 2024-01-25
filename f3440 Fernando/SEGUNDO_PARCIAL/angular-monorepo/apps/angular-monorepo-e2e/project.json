@@ -1,0 +1,30 @@
+{
+  "name": "angular-monorepo-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/angular-monorepo-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/angular-monorepo-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "angular-monorepo:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "angular-monorepo:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "angular-monorepo:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["angular-monorepo"]
+}

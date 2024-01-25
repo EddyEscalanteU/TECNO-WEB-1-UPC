@@ -1,0 +1,30 @@
+{
+  "name": "AppY-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/AppY-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/AppY-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "AppY:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "AppY:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "AppY:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["AppY"]
+}
