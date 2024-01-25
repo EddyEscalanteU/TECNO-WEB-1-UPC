@@ -1,0 +1,16 @@
+{
+  "name": "@angular-monorepo/source",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {},
+  "private": true,
+  "dependencies": {
+    "@nx/angular": "17.2.8"
+  },
+  "devDependencies": {
+    "@angular-devkit/core": "~17.0.0",
+    "@nx/workspace": "17.2.8",
+    "nx": "17.2.8",
+    "typescript": "~5.2.2"
+  }
+}
