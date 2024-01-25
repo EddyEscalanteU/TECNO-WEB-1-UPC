@@ -1,0 +1,92 @@
+{
+  "name": "upc-tecno-web-2",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "upc-tecno-web-2",
+  "sourceRoot": "apps/upc-tecno-web-2/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/upc-tecno-web-2",
+        "index": "apps/upc-tecno-web-2/src/index.html",
+        "browser": "apps/upc-tecno-web-2/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/upc-tecno-web-2/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/upc-tecno-web-2/src/favicon.ico",
+          "apps/upc-tecno-web-2/src/assets"
+        ],
+        "styles": ["apps/upc-tecno-web-2/src/styles.scss"],
+        "scripts": [],
+        "server": "apps/upc-tecno-web-2/src/main.server.ts",
+        "prerender": true,
+        "ssr": {
+          "entry": "apps/upc-tecno-web-2/server.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "upc-tecno-web-2:build:production"
+        },
+        "development": {
+          "buildTarget": "upc-tecno-web-2:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "upc-tecno-web-2:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/upc-tecno-web-2/jest.config.ts"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "upc-tecno-web-2:build",
+        "staticFilePath": "dist/apps/upc-tecno-web-2/browser"
+      }
+    }
+  }
+}

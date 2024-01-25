@@ -1,0 +1,16 @@
+<input [(ngModel)]="filter" id="myInput"(input)="changefilter($event)" placeholder="Buscar por nombres..">
+
+<table id="myTable">
+  <thead>
+    <tr class="header">
+    <th style="width:60%;">Name</th>
+    <th style="width:40%;">Country</th>
+  </tr>
+</thead>
+  <tbody>
+  <tr *ngFor="let elemento of data" >
+    <td>{{elemento.name}}</td>
+    <td>{{elemento.country}}</td>
+  </tr>
+</tbody>
+</table>
