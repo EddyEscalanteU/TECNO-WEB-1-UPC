@@ -1,0 +1,41 @@
+
+<div style="width: 100%;" class="d-flex justify-content-center">
+    <div *ngFor="let imagen of arrayFotos" class="card" style="width: 18rem;">
+        <img src="{{imagen.thumbnailUrl}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{imagen.title}}</h5>
+          <a href="{{imagen.url}}" class="btn btn-primary">Ver imagen</a>
+        </div>
+      </div>
+</div>
+<div style="width: 100%;" class="d-flex justify-content-center">
+    <tecno-web-tw-button></tecno-web-tw-button>
+</div>
+
+
+
+<div class="container">
+  <h2>Formulario de Ejemplo</h2>
+  <form (ngSubmit)="onSubmit()" #formulario="ngForm">
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input type="text" class="form-control" id="name" name="name" [(ngModel)]="formData.name" required>
+      <div *ngIf="formulario.controls['name'].invalid && (formulario.controls['name'].dirty || formulario.controls['name'].touched)">
+        <small>El nombre es requerido.</small>
+      </div>
+    </div>
+    
+    <!-- <div>
+      <label for="correo">Correo Electrónico:</label>
+      <input type="email" id="correo" name="correo" class="form-control" [(ngModel)]="formData.correo" required>
+      <div *ngIf="formulario.controls['correo'].invalid && (formulario.controls['correo'].dirty || formulario.controls['correo'].touched)">
+        <small>Ingrese un correo electrónico válido.</small>
+      </div>
+    </div> -->
+
+    <button type="submit" [disabled]="formulario.invalid">Enviar</button>
+  </form>
+</div>
+
+
+<router-outlet></router-outlet>
