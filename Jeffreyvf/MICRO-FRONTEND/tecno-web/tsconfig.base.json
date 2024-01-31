@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@tecno-web/mega-menu": ["libs/mega-menu/src/index.ts"],
+      "@tecno-web/tw-button": ["libs/tw-button/src/index.ts"],
+      "@tecno-web/tw-welcome": ["libs/tw-welcome/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
