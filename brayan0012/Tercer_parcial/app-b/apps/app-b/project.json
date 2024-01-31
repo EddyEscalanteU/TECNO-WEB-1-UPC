@@ -1,0 +1,88 @@
+{
+  "name": "app-b",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app-b",
+  "sourceRoot": "apps/app-b/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/app-b",
+        "index": "apps/app-b/src/index.html",
+        "browser": "apps/app-b/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/app-b/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/app-b/src/favicon.ico", "apps/app-b/src/assets"],
+        "styles": ["apps/app-b/src/styles.scss"],
+        "scripts": [],
+        "server": "apps/app-b/src/main.server.ts",
+        "prerender": true,
+        "ssr": {
+          "entry": "apps/app-b/server.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "app-b:build:production"
+        },
+        "development": {
+          "buildTarget": "app-b:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "app-b:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/app-b/jest.config.ts"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "app-b:build",
+        "staticFilePath": "dist/apps/app-b/browser"
+      }
+    }
+  }
+}

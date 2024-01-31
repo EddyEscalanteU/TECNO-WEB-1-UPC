@@ -1,0 +1,67 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
+  ],
+  "aaff": [
+    {
+      "albumId": 1,
+      "id": 1,
+      "title": "TOY STORY 1 LA PELICULA",
+      "url": "https://via.placeholder.com/600/92c952",
+      "thumbnailUrl": "https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_.jpg"
+    },
+    {
+      "albumId": 1,
+      "id": 2,
+      "title": "reprehenderit est deserunt velit ipsam",
+      "url": "https://via.placeholder.com/600/771796",
+      "thumbnailUrl": "https://via.placeholder.com/150/771796"
+    }
+  ],
+  "rrhh": [
+    {
+      "albumId": 1,
+      "id": 1,
+      "title": "TOY STORY 1 LA PELICULA",
+      "url": "https://via.placeholder.com/600/92c952",
+      "thumbnailUrl": "https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_.jpg"
+    },
+    {
+      "albumId": 1,
+      "id": 2,
+      "title": "reprehenderit est deserunt velit ipsam",
+      "url": "https://via.placeholder.com/600/771796",
+      "thumbnailUrl": "https://via.placeholder.com/150/771796"
+    }
+  ],
+  "profile": [
+    {
+      "name": "typicode"
+    },
+    {
+      "id": "098a",
+      "name": "hola"
+    },
+    {
+      "id": "0d65",
+      "name": "hola"
+    },
+    {
+      "id": "fc99",
+      "name": "hola"
+    },
+    {
+      "id": "944b",
+      "name": "hola3"
+    }
+  ]
+}
