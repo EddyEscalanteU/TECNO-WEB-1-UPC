@@ -1,0 +1,30 @@
+{
+  "name": "app-X-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/app-X-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/app-X-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "app-X:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "app-X:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "app-X:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["app-X"]
+}
