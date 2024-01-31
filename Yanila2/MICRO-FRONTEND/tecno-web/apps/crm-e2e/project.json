@@ -1,0 +1,29 @@
+{
+  "name": "crm-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/crm-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/crm-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "crm:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "crm:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "crm:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["crm"]
+}
