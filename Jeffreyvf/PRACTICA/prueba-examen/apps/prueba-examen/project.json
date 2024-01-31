@@ -1,0 +1,91 @@
+{
+  "name": "prueba-examen",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "prueba-examen",
+  "sourceRoot": "apps/prueba-examen/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/prueba-examen",
+        "index": "apps/prueba-examen/src/index.html",
+        "browser": "apps/prueba-examen/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/prueba-examen/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/prueba-examen/src/favicon.ico",
+          "apps/prueba-examen/src/assets"
+        ],
+        "styles": ["apps/prueba-examen/src/styles.scss"],
+        "scripts": [],
+        "server": "apps/prueba-examen/src/main.server.ts",
+        "prerender": true,
+        "ssr": {
+          "entry": "apps/prueba-examen/server.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "prueba-examen:build:production"
+        },
+        "development": {
+          "buildTarget": "prueba-examen:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "prueba-examen:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/prueba-examen/jest.config.ts"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "prueba-examen:build",
+        "staticFilePath": "dist/apps/prueba-examen/browser"
+      }
+    }
+  }
+}
