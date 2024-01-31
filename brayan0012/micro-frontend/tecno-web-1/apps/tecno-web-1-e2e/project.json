@@ -1,0 +1,29 @@
+{
+  "name": "tecno-web-1-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/tecno-web-1-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/tecno-web-1-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "tecno-web-1:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "tecno-web-1:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "tecno-web-1:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["tecno-web-1"]
+}
