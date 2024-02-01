@@ -9,24 +9,22 @@ import { AccordionServiceService } from './accordion-service.service';
   styleUrl: './accordion1.component.css',
 })
 export class Accordion1Component {
-  public datoLista: any ;
+  public datoLista: any;
 
   constructor(private accordionService: AccordionServiceService) {}
 
   ngOnInit(): void {
     this.getDatos();
-    console.log(this.datoLista)
   }
 
   public getDatos(): void {
-    this.accordionService.getDatos().subscribe(data => {
-      this.datoLista = data
+    this.accordionService.getDatos().subscribe((data) => {
+      this.datoLista = data;
+      console.log(this.datoLista); 
     });
-    console.log(this.datoLista)
   }
 
-
-  public togglePanel(section: { active: boolean; }): void {
+  public togglePanel(section: { active: boolean }): void {
     section.active = !section.active;
   }
   
