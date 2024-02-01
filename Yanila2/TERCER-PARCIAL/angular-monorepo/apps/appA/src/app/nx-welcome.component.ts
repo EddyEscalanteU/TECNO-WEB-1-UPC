@@ -431,6 +431,7 @@ import { SearchBarComponent } from '@angular-monorepo/Search-Bar';
     <div class="wrapper">
       <div class="container">
         <!--  WELCOME  -->
+        
         <angular-monorepo-search-bar></angular-monorepo-search-bar>
         <div id="welcome">
           <h1>
