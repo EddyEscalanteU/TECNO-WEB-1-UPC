@@ -1,0 +1,13 @@
+<h2>Accordion</h2>
+<div>
+    @for (dato of datoLista; track dato.id) {
+        <button class="accordion" (click)="togglePanel(dato)" >Section {{dato.id}}</button>
+        @if(dato.active) {
+            <div class="panel">
+                <p>{{dato.name}}</p>
+                <p>{{dato.username}}</p>
+            </div>
+        }
+        
+    }
+</div>

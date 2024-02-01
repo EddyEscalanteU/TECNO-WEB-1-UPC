@@ -1,0 +1,3 @@
+Abrir el gitbash o comand de windows y arrancar con el comando
+
+json-server --watch db.json
