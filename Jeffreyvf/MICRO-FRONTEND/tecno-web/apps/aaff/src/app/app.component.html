@@ -1,0 +1,17 @@
+
+<h1>SERVICIO WEB (AQUI)</h1>
+
+<div *ngFor="let item of fotosArray">
+    <div id="hero" class="rounded">
+      <div class="text-container">
+        <h2>
+          <span>albumId: {{item.albumId}} - id:{{item.id}} - title:{{item.title}} - url:{{item.url}}
+            <img src="{{item.thumbnailUrl}}" alt="foto" width="100" height="100">
+          </span>
+        </h2>
+      </div>
+    </div>
+  </div>
+
+<tecno-web-nx-welcome></tecno-web-nx-welcome> <router-outlet></router-outlet>
+
