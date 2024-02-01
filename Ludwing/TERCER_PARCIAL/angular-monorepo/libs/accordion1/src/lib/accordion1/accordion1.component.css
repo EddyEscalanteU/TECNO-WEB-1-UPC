@@ -14,10 +14,3 @@
   .active, .accordion:hover {
     background-color: #ccc; 
   }
-  
-  .panel {
-    padding: 0 18px;
-    display: none;
-    background-color: white;
-    overflow: hidden;
-  }
