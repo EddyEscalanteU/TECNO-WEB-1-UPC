@@ -1,0 +1,29 @@
+{
+  "name": "acrn-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/crn-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/crn-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "acrn:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "acrn:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "acrn:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["acrn"]
+}

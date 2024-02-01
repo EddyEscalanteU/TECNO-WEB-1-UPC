@@ -1,0 +1,25 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@angular-monorepo/accordion": ["libs/accordion/src/index.ts"],
+      "@angular-monorepo/hover-tabs": ["libs/hover-tabs/src/index.ts"],
+      "@angular-monorepo/search-bar": ["libs/search-bar/src/index.ts"],
+      "@angular-monorepo/tw-wlcome": ["libs/tw-wlcome/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
