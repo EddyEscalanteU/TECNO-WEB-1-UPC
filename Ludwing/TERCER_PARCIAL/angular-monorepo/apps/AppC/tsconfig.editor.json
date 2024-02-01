@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["src/**/*.ts", "../../libs/accordion1/src/lib/accordion1/accordion-service.service.ts"],
+  "include": ["src/**/*.ts"],
   "compilerOptions": {
     "types": ["jest", "node"]
   }

@@ -4,7 +4,8 @@
         <button class="accordion" (click)="togglePanel(dato)" >Section {{dato.id}}</button>
         @if(dato.active) {
             <div class="panel">
-                <p>{{dato.title}}</p>
+                <p>{{dato.name}}</p>
+                <p>{{dato.username}}</p>
             </div>
         }
         

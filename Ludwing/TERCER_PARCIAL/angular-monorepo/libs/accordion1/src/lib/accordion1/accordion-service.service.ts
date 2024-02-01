@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class AccordionServiceService {
 
-  private URL: string = 'https://jsonplaceholder.typicode.com/photos?_start=0&_limit=4';
+  private URL: string = 'https://jsonplaceholder.typicode.com/users?_start=0&_limit=7';
 
   constructor(private http: HttpClient,) { 
   }
