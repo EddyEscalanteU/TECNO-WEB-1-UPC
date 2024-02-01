@@ -9,7 +9,7 @@ import { AccordionServiceService } from './accordion-service.service';
   styleUrl: './accordion1.component.css',
 })
 export class Accordion1Component {
-  public datoLista: any;
+  public datoLista: any ;
 
   constructor(private accordionService: AccordionServiceService) {}
 
@@ -19,7 +19,7 @@ export class Accordion1Component {
   }
 
   public getDatos(): void {
-    this.accordionService.getUsers().subscribe(data => {
+    this.accordionService.getDatos().subscribe(data => {
       this.datoLista = data
     });
     console.log(this.datoLista)
