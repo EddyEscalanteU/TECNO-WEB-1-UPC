@@ -1,0 +1,20 @@
+{
+  "name": "accordion",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "accordion/src",
+  "prefix": "tecnoweb-final",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "accordion/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
