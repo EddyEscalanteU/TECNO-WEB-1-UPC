@@ -1,24 +1,29 @@
 {
-  "name": "appC",
+  "name": "AppC",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "angular-monorepo",
-  "sourceRoot": "apps/appC/src",
+  "sourceRoot": "apps/AppC/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/appC",
-        "index": "apps/appC/src/index.html",
-        "browser": "apps/appC/src/main.ts",
+        "outputPath": "dist/apps/AppC",
+        "index": "apps/AppC/src/index.html",
+        "browser": "apps/AppC/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/appC/tsconfig.app.json",
+        "tsConfig": "apps/AppC/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/appC/src/favicon.ico", "apps/appC/src/assets"],
-        "styles": ["apps/appC/src/styles.scss"],
-        "scripts": []
+        "assets": ["apps/AppC/src/favicon.ico", "apps/AppC/src/assets"],
+        "styles": ["apps/AppC/src/styles.scss"],
+        "scripts": [],
+        "server": "apps/AppC/src/main.server.ts",
+        "prerender": true,
+        "ssr": {
+          "entry": "apps/AppC/server.ts"
+        }
       },
       "configurations": {
         "production": {
@@ -48,10 +53,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "appC:build:production"
+          "buildTarget": "AppC:build:production"
         },
         "development": {
-          "buildTarget": "appC:build:development"
+          "buildTarget": "AppC:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -59,7 +64,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "appC:build"
+        "buildTarget": "AppC:build"
       }
     },
     "lint": {
@@ -69,14 +74,14 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/appC/jest.config.ts"
+        "jestConfig": "apps/AppC/jest.config.ts"
       }
     },
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "appC:build",
-        "staticFilePath": "dist/apps/appC/browser"
+        "buildTarget": "AppC:build",
+        "staticFilePath": "dist/apps/AppC/browser"
       }
     }
   }

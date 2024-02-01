@@ -1,22 +1,22 @@
 {
-  "name": "appC-e2e",
+  "name": "AppC-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "apps/appC-e2e/src",
+  "sourceRoot": "apps/AppC-e2e/src",
   "targets": {
     "e2e": {
       "executor": "@nx/cypress:cypress",
       "options": {
-        "cypressConfig": "apps/appC-e2e/cypress.config.ts",
+        "cypressConfig": "apps/AppC-e2e/cypress.config.ts",
         "testingType": "e2e",
-        "devServerTarget": "appC:serve:development"
+        "devServerTarget": "AppC:serve:development"
       },
       "configurations": {
         "production": {
-          "devServerTarget": "appC:serve:production"
+          "devServerTarget": "AppC:serve:production"
         },
         "ci": {
-          "devServerTarget": "appC:serve-static"
+          "devServerTarget": "AppC:serve-static"
         }
       }
     },
@@ -25,5 +25,5 @@
     }
   },
   "tags": [],
-  "implicitDependencies": ["appC"]
+  "implicitDependencies": ["AppC"]
 }

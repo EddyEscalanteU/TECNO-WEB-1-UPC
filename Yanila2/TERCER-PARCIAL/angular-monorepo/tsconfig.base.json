@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@angular-monorepo/mega-menu": ["libs/mega-menu/src/index.ts"]
+      "@angular-monorepo/Accordion": ["libs/Accordion/src/index.ts"],
+      "@angular-monorepo/Hover-Tabs": ["libs/Hover-Tabs/src/index.ts"],
+      "@angular-monorepo/Search-Bar": ["libs/Search-Bar/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
