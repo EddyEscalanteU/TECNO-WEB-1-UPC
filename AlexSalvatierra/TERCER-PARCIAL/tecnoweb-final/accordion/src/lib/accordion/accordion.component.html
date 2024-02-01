@@ -1,0 +1,12 @@
+<!-- app-accordion.component.html -->
+<h1>Accordion</h1>
+
+<div *ngFor="let item of accordionArray; let i = index">
+  <button class="accordion" (click)="togglePanel(i)">
+    Section {{ i + 1 }}
+  </button>
+  <div class="panel" [ngClass]="{'active': item.isActive}">
+    <p *ngIf="item.isActive">Name: {{ item.name }}, Email: {{ item.email }}</p>
+    
+  </div>
+</div>

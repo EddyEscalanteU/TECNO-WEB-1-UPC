@@ -19,10 +19,11 @@ export class AppComponent implements OnInit {
   constructor(private fotoSvc:FotosService){}
   ngOnInit() {
     
-    this.fotoSvc.getAllHeros().subscribe(res =>{
-      this.heroes=res;
-      
-    })
+   this.fotoSvc.getAllHeros().subscribe(res=>{
+
+    this.heroes= res;
+
+   })
 
   }
 }
