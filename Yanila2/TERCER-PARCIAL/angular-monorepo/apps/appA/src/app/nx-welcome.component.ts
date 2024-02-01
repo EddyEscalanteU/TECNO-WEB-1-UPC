@@ -1,10 +1,11 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SearchBarComponent } from '@angular-monorepo/Search-Bar';
 
 @Component({
   selector: 'angular-monorepo-nx-welcome',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SearchBarComponent],
   template: `
     <!--
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -426,22 +427,22 @@ import { CommonModule } from '@angular/common';
         }
       }
     </style>
+    
+    <div class="wrapper">
+      <div class="container">
+        <!--  WELCOME  -->
+        <angular-monorepo-search-bar></angular-monorepo-search-bar>
+        <div id="welcome">
+          <h1>
+            <span> Hello!! </span>
+            Welcome AppA 👋
+          </h1>
+        </div>
+        <!--  HERO  -->
+      
+        <!--  MIDDLE CONTENT  -->
 
-<div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
-  <div class="search-container">
-    <form action="/action_page.php">
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
-  </div>
-</div>
-
-
-
-
+        
   `,
   styles: [],
   encapsulation: ViewEncapsulation.None,

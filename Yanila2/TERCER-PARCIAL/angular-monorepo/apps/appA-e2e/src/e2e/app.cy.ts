@@ -1,6 +1,6 @@
 import { getGreeting } from '../support/app.po';
 
-describe('appA-e2e', () => {
+describe('AppA-e2e', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {

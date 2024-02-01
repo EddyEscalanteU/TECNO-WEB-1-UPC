@@ -1,10 +1,11 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HoverTabsComponent } from '@angular-monorepo/Hover-Tabs';
 
 @Component({
   selector: 'angular-monorepo-nx-welcome',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,HoverTabsComponent],
   template: `
     <!--
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -14,16 +15,7 @@ import { CommonModule } from '@angular/common';
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *
      -->
     <style>
-      html {
-        -webkit-text-size-adjust: 100%;
-        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-          'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
-          'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-          'Noto Color Emoji';
-        line-height: 1.5;
-        tab-size: 4;
-        scroll-behavior: smooth;
-      }
+  
       body {
         font-family: inherit;
         line-height: inherit;
@@ -427,32 +419,18 @@ import { CommonModule } from '@angular/common';
       }
     </style>
 
+    <angular-monorepo-hover-tabs></angular-monorepo-hover-tabs>
+    <div class="wrapper">
+      <div class="container">
+        <!--  WELCOME  -->
+        <div id="welcome">
+          <h3>
+            <span> Hello! </span>
+            Welcome AppB 👋
+          </h3>
+        </div>
+        <!--  HERO  -->
 
-<div class="tab">
-  <button class="tablinks" onmouseover="openCity(event, 'London')">London</button>
-  <button class="tablinks" onmouseover="openCity(event, 'Paris')">Paris</button>
-  <button class="tablinks" onmouseover="openCity(event, 'Tokyo')">Tokyo</button>
-</div>
-
-<div id="London" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
-</div>
-
-<div id="Paris" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p>
-</div>
-
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
-
-   
-        <!--  MIDDLE CONTENT  -->
-    
-    
   `,
   styles: [],
   encapsulation: ViewEncapsulation.None,

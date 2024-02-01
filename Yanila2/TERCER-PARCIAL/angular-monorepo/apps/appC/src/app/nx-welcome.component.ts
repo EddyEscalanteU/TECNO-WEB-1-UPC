@@ -1,10 +1,11 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AccordionComponent } from '@angular-monorepo/Accordion';
 
 @Component({
   selector: 'angular-monorepo-nx-welcome',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,AccordionComponent],
   template: `
     <!--
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -426,25 +427,18 @@ import { CommonModule } from '@angular/common';
         }
       }
     </style>
-
-
-
-<button class="accordion">Section 1</button>
-<div class="panel">
-  <p>Lorem ipsum...</p>
-</div>
-
-<button class="accordion">Section 2</button>
-<div class="panel">
-  <p>Lorem ipsum...</p>
-</div>
-
-<button class="accordion">Section 3</button>
-<div class="panel">
-  <p>Lorem ipsum...</p>
-</div>
-
-
+    <angular-monorepo-accordion></angular-monorepo-accordion>
+    <div class="wrapper">
+      <div class="container">
+        <!--  WELCOME  -->
+        <div id="welcome">
+          <h1>
+            <span> Hello there, </span>
+            Welcome AppC 👋
+          </h1>
+        </div>
+        <!--  HERO  -->
+  
   `,
   styles: [],
   encapsulation: ViewEncapsulation.None,
