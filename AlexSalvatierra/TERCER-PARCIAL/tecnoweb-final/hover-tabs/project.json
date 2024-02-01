@@ -1,0 +1,20 @@
+{
+  "name": "hover-tabs",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "hover-tabs/src",
+  "prefix": "tecnoweb-final",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "hover-tabs/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
