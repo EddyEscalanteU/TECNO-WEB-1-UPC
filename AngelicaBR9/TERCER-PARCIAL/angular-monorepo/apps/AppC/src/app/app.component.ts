@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TwWlcomeComponent } from '@angular-monorepo/tw-wlcome';
 import { AccordionComponent } from '@angular-monorepo/accordion';
-//import { FotosServicios } from './servicios/servicio-web1.service';//
+import { ServicioWeb1Service } from './servicios/servicio-web1.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [RouterModule, TwWlcomeComponent, AccordionComponent],
+  imports: [RouterModule, TwWlcomeComponent, AccordionComponent, CommonModule],
   selector: 'angular-monorepo-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -14,21 +15,21 @@ import { AccordionComponent } from '@angular-monorepo/accordion';
 export class AppComponent {
   title = 'AppC';
 
- // public  ServicioArray: ary[] = [];
+  public  ServicioArray: any;
 
- // constructor(private fotoServicio: FotosServicios )  {
- //   console.log('AppComponent Constructor 123');
- //   this.getServicios();
+  constructor(private servicioweb: ServicioWeb1Service )  {
+    console.log('AppComponent Constructor 123');
+    this.getServicioWeb();
 
-//  }
+  }
 
- // public getServicios (){
- //   this.fotoServicio.getServicios()
- //   .subscribe ((data) => {
-   //   console.log(data);
-   //   this.ServicioArray = data;
-  //  } );
+ public getServicioWeb (){
+    this.servicioweb.getServicioWeb()
+    .subscribe ((data) => {
+      console.log(data);
+      this.ServicioArray = data;
+    } );
 
 
   }
-//}
+}

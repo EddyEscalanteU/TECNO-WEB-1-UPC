@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ɵflushModuleScopingQueueAsMuchAsPossible } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MegaMenuComponent } from '@angular-monorepo/mega-menu';
 import { FilterTableComponent } from '@angular-monorepo/filter-table';
