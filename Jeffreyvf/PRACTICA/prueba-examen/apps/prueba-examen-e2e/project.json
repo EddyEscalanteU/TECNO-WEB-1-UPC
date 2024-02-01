@@ -1,0 +1,29 @@
+{
+  "name": "prueba-examen-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/prueba-examen-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/prueba-examen-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "prueba-examen:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "prueba-examen:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "prueba-examen:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["prueba-examen"]
+}

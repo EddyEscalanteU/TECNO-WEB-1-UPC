@@ -1,0 +1,91 @@
+{
+  "name": "tecno-web",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "tecno-web",
+  "sourceRoot": "apps/tecno-web/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/tecno-web",
+        "index": "apps/tecno-web/src/index.html",
+        "browser": "apps/tecno-web/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/tecno-web/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/tecno-web/src/favicon.ico",
+          "apps/tecno-web/src/assets"
+        ],
+        "styles": ["apps/tecno-web/src/styles.scss"],
+        "scripts": [],
+        "server": "apps/tecno-web/src/main.server.ts",
+        "prerender": true,
+        "ssr": {
+          "entry": "apps/tecno-web/server.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "tecno-web:build:production"
+        },
+        "development": {
+          "buildTarget": "tecno-web:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "tecno-web:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/tecno-web/jest.config.ts"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "tecno-web:build",
+        "staticFilePath": "dist/apps/tecno-web/browser"
+      }
+    }
+  }
+}

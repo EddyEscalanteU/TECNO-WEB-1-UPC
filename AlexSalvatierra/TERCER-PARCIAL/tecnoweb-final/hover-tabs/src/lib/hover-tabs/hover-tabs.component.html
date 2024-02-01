@@ -1,0 +1,19 @@
+<!-- app.component.html -->
+<h2>Hover Tabs</h2>
+<p>Move the mouse over a button inside the tabbed menu:</p>
+
+<div class="tab">
+  <button
+    class="tablinks"
+    *ngFor="let tab of tabs"
+    (mouseover)="openCity(tab)"
+    (mouseout)="resetTabs()"
+    [class.active]="tab.isActive"
+  >
+    <span class="tab-text">{{ tab.title }}</span>
+    <div class="tabcontent">
+      <h3>{{ tab.title }}</h3>
+      <p>{{ tab.content }}</p>
+    </div>
+  </button>
+</div>

@@ -1,10 +1,11 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MegaMenuComponent } from '@angular-monorepo/mega-menu';
 
 @Component({
   selector: 'angular-monorepo-nx-welcome',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MegaMenuComponent],
   template: `
     <!--
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -429,6 +430,8 @@ import { CommonModule } from '@angular/common';
     <div class="wrapper">
       <div class="container">
         <!--  WELCOME  -->
+<angular-monorepo-mega-menu></angular-monorepo-mega-menu>
+
         <div id="welcome">
           <h1>
             <span> Hello there, </span>
